@@ -1,0 +1,203 @@
+h1, p {
+  font-family: Lato;
+}
+
+
+/* Dropdown begins */
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.multi-select {
+  border: 1px solid #242424;
+}
+
+.dropdown-heading {
+  background: #242424 !important;
+  cursor: pointer !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 0px !important;
+  font-family: "special-elite" !important;
+}
+
+.dropdown-heading .dropdown-heading-value span {
+  color: white !important;
+  font-family: "helvetica" !important;
+}
+
+.dropdown-heading:hover,
+.dropdown-heading:hover .dropdown-heading-value span {
+  background: white !important;
+  color: #4e4e4e !important;
+}
+
+/* .dropdown-heading .dropdown-heading-value:hover{
+  color: #4e4e4e !important;
+}
+
+.dropdown-heading .dropdown-heading-value span {
+  color: white !important;
+}
+.dropdown-heading .dropdown-heading-value span:hover{
+  color: #4e4e4e !important;
+} */
+
+.select-item .item-renderer span {
+  font-family: "helvetica" !important;
+}
+
+/* .dropdown-heading-dropdown-arrow span {
+  border: none !important;
+  background: url("M790.592 551.616l-45.184 45.12-233.408-233.344-233.408 233.344-45.184-45.12 278.592-278.592 278.592 278.592z") !important;
+} */
+
+/* g > g > text {	
+  font-size: 14px !important	
+} */	
+
+
+
+/* Confirmed cases */
+text[transform="translate(-54, 533.88671875) rotate(-90)"]{	
+  font-size: 30px !important;	
+  font-weight: bold;	
+  font-family: "Special Elite"	
+ 	
+}	
+
+/* Time period */
+/* text[transform="translate(690, 60) rotate(0)"]{	
+  font-size: 30px !important;	
+  font-weight: bold;	
+  font-family: "Special Elite"	
+}	 */
+
+text[style="fill: rgb(51, 51, 51); font-size: 11px;"]{
+  font-size: 30px !important;	
+  font-weight: bold;	
+  font-family: "Special Elite"	
+}
+
+/* <text transform="translate(690, 60) rotate(0)" text-anchor="middle" style="fill: rgb(51, 51, 51); font-size: 11px;">Time period</text> */
+text[text-anchor="end"]{	
+  font-size: 16px !important	
+}	
+text[alignment-baseline="before-edge"]{	
+  font-size: 16px !important	
+}	
+.title{	
+  font-family: "Special Elite";	
+  font-size: 50px;	
+  font-weight: bold;	
+  text-align: center;	
+  margin-top: 20px;	
+  color: darkgray;
+}	
+.resetButton{	
+  margin-top: 8px;	
+  margin-right: 8px;	
+  font-family: "Special Elite";	
+  padding: 5px;	
+  font-size: 20px;	
+  background:#d2d1ce;	
+  	
+}	
+.resetButton:hover{	
+  background-color: indianred;	
+  animation-name: pulse;	
+  animation-duration: 2s;	
+  animation-iteration-count: infinite;	
+}	
+.updateButton{	
+  margin-top: 8px;	
+  margin-right: 15px;	
+  font-family: "Special Elite";	
+  padding: 5px;	
+  font-size: 20px;	
+  background:#d2d1ce	
+}	
+.updateButton:hover{	
+  background-color: greenyellow;	
+  animation-name: pulse;	
+  animation-duration: 2s;	
+  animation-iteration-count: infinite;	
+}	
+h3 {	
+  font-family: "Special Elite";	
+  font-size: 24px;	
+  text-align: center;	
+}	
+/* [transform=translate(550, 46)]{	
+  font-size: 20px !important	
+} */	 */
+/* [text-anchor~=middle]{	
+  font-size: 16px !important	
+} */	 */
+
+input[placeholder="Search Countries"]{	
+  font-size: 14px !important	
+}
+
+
+/* Animation Part */
+
+
+.covid{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 30px
+}
+
+.surgeon{
+  font-size: 60px;
+  margin-left: 70px;
+  
+}
+
+.shot{
+  font-size: 60px;
+  position:absolute;
+  margin-left: 90px;
+  animation-name: shoot;
+   animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards
+}
+
+.world{
+  font-size: 60px;
+  margin-left: 70px;
+  animation-name: spin;
+  animation-duration: 3s;
+  animation-iteration-count:infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+    left: 600px; 
+  }
+  to {
+    transform: rotate(360deg);
+    left: 800px;
+  }
+}
+
+@keyframes shoot {
+    from {  
+    top: 20px;
+    left: 30px;
+  }
+  to {
+    top: 5px;
+    left: 70px;
+  }
+}
