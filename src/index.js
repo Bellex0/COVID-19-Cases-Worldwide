@@ -11,6 +11,7 @@ import { ThemeProvider } from '@nivo/core';
 import { black } from 'color-name';
 import saveImage from "./dom2Image";
 import Multiselect from "@khanacademy/react-multi-select"; 
+import Recovered from "./recovered.js"
 
 
 export default class App extends Component {
@@ -60,11 +61,7 @@ fetch('https://pomber.github.io/covid19/timeseries.json')
     
 })
 this.fetchAgain();
-
-
 }
-
-
 
 makeArrayOfCountries = () => {
   const countriesArray = Object.keys(this.state.data)
@@ -312,8 +309,6 @@ changeState = (e) => {
     };
   }
 
-  
-
   render() {
     const content = (
       <div>
@@ -323,18 +318,14 @@ changeState = (e) => {
 
   const countriesCount = this.state.selected.length
     
-
     const { selected, isLoading } = this.state;
     return (
 
       <>
 
- <div class="navButtons">
- <a target="_blank" href='https://coronadeaths.netlify.com'> <button class="deathsButton"> Deaths</button> </a>
-<a target="_blank" href='https://coronarecovered.netlify.com'>  <button class="recoveredButton"> Recovered </button> </a>
-</div>    
+    
       
-      <div style={{'width':'800', textAlign: "center", "marginLeft":'300', 'margin': '0 auto'}}>
+      {/* <div style={{'width':'800', textAlign: "center", "marginLeft":'300', 'margin': '0 auto'}}>
       <h1 className="title">COVID-19 <span style={{"color":"yellow"}}>CASES</span> ACROSS THE GLOBE</h1>
 
      
@@ -342,9 +333,9 @@ changeState = (e) => {
       <div class="surgeon"> 😷</div>
       <div class="shot"> 💉</div>
       <div class="world"> 🌎</div>
-      </div>
+      </div> */}
      
-      
+{/*       
         <Multiselect
         style={{"display":"flex", "justify-content":"center", "align-items":"center"}}
           options={this.makeArrayOfCountries()}
@@ -373,7 +364,12 @@ changeState = (e) => {
         />
 
        
-      </div>
+      </div> */}
+
+      <Recovered/>
+        <div style={{"textAlign":"center", "marginBottom":"40px"}}>
+        <a  style={{'color':'#56A0D0','font-size':'18px'}} target="_blank" href="https://bellep.info"> Get in Touch? </a>
+        </div>
      
       </>
     );

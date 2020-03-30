@@ -10,10 +10,8 @@ import uuid from 'react-uuid';
 import { ThemeProvider } from '@nivo/core';
 import { black } from 'color-name';
 import saveImage from "./dom2Image";
-import {Link} from 'react-router-dom';
-import {BrowserRouter} from 'react-router-dom';
 import Multiselect from "@khanacademy/react-multi-select"; 
-import Deaths from './Deaths'
+import Deaths from './death'
 
 export default class App extends Component {
   constructor(props) {
@@ -51,26 +49,127 @@ fetch('https://pomber.github.io/covid19/timeseries.json')
 .then(data=>{
           this.setState( (state) => {
             return {
-                    
+                    // country: [...this.state.country, country],
                     data: data
                   }
           },
-         
+          // ()=>{
+          //   this.setState({
+          //     country: [...this.state.country, Object.keys(data)]
+          //   })
+          // }
           )
         
+
+    //       data.forEach(({ date, confirmed, recovered, deaths }) =>
+    //   console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
+    // )
+// })
 })
 this.fetchAgain();
+//moment(date).format('MM-DD-YYYY')
+//! 1 
 
+
+// fetch("https://pomber.github.io/covid19/timeseries.json")
+// .then(response => response.json())
+// .then(data => {
+//   data[this.state.countries[3]].forEach(({ date, confirmed, recovered, deaths }) =>
+//     // console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
+//     this.setState({
+//       data1: [...this.state.data1, 
+//         {
+//           key: uuid(),
+//           id: this.state.countries[3],
+//           // color: "hsl(348, 70%, 50%)",
+//           data: [
+//             {key: uuid(),  x: new Date(`${date}`), y: confirmed, value: "a" },
+//           ]
+//         }
+//       ]
+//     })
+//   )
+// })
+// //! 2 
+// fetch("https://pomber.github.io/covid19/timeseries.json")
+// .then(response => response.json())
+// .then(data => {
+//   data[this.state.countries[2]].forEach(({ date, confirmed, recovered, deaths }) =>
+//     // console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
+//     this.setState({
+//       data1: [...this.state.data1, 
+//         {
+//           key: uuid(),
+//           id: this.state.countries[2],
+//           color: "hsla(117, 100%, 50%, 1)",
+//           data: [
+//             { key: uuid(),  x: new Date(`${date}`), y: confirmed, value: "a" },
+//           ]
+//         }
+//       ]
+//     })
+//   )
+// })
+// //! 3 
+// fetch("https://pomber.github.io/covid19/timeseries.json")
+// .then(response => response.json())
+// .then(data => {
+//   data[this.state.countries[1]].forEach(({ date, confirmed, recovered, deaths }) =>
+//     // console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
+//     this.setState({
+//       data1: [...this.state.data1, 
+//         {
+//           key: uuid(),
+//           id: this.state.countries[1],
+//           color: "hsla(311, 100%, 50%, 1)",
+//           data: [
+//             { key: uuid(), x: new Date(`${date}`), y: confirmed, value: "a" },
+//           ]
+//         }
+//       ]
+//     })
+//   )
+// })
+// //! 4 
+// fetch("https://pomber.github.io/covid19/timeseries.json")
+// .then(response => response.json())
+// .then(data => {
+//   data[this.state.countries[0]].forEach(({ date, confirmed, recovered, deaths }) =>
+//     // console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
+//     this.setState({
+//       data1: [...this.state.data1, 
+//         {
+//           key: uuid(),
+//           id: this.state.countries[0],
+//           color: "hsl(348, 70%, 50%)",
+//           data: [
+//             { key: uuid(), x: new Date(`${date}`), y: confirmed , value: "a"},
+//           ]
+//         }
+//       ]
+//     })
+//   )
+// })
+}
+
+// options= [
+//   Object.keys(this.state.data).map((country)=>{
+//      return  {label: country,
+//               value: country}
+//   })
+// ]
 
 makeArrayOfCountries = () => {
   const countriesArray = Object.keys(this.state.data)
   console.log(countriesArray)
-  
+  //!  how do i iterate over this array to have output like {label: country, value: country}
   var outcome = countriesArray.sort().map(function(value){
     return {label: value, value: value};
   })
   return outcome
-   
+    // countriesArray.forEach((country)=>{
+    //    return  country;
+    // })
 }
 
 fetchAgain = () => {
@@ -81,13 +180,13 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
 .then(response => response.json())
 .then(data => {
   data[this.state.countries[3]].forEach(({ date, confirmed, recovered, deaths }) =>
-    
+    // console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
     this.setState({
       data1: [...this.state.data1, 
         {
           key: uuid(),
           id: this.state.countries[3],
-          
+          // color: "hsl(348, 70%, 50%)",
           data: [
             {key: uuid(),  x: new Date(`${date}`), y: recovered, value: "a" },
           ]
@@ -96,12 +195,12 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
     })
   )
 })
-
+//! 2 
 fetch("https://pomber.github.io/covid19/timeseries.json")
 .then(response => response.json())
 .then(data => {
   data[this.state.countries[2]].forEach(({ date, confirmed, recovered, deaths }) =>
-    
+    // console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
     this.setState({
       data1: [...this.state.data1, 
         {
@@ -121,7 +220,7 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
 .then(response => response.json())
 .then(data => {
   data[this.state.countries[1]].forEach(({ date, confirmed, recovered, deaths }) =>
-    
+    // console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
     this.setState({
       data1: [...this.state.data1, 
         {
@@ -141,7 +240,7 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
 .then(response => response.json())
 .then(data => {
   data[this.state.countries[0]].forEach(({ date, confirmed, recovered, deaths }) =>
-    
+    // console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
     this.setState({
       data1: [...this.state.data1, 
         {
@@ -173,8 +272,6 @@ options = [
   { label: "Label5", value: "label_5" }
 ];
 
-
-
 handleSelectedChanged = selected => {
   this.setState({ selected: selected });
   console.log(this.state.selected);
@@ -191,16 +288,14 @@ updateCountries = () => {
 }
 
 changeState = (e) => {
-  // this.stateChange(e)
   this.setState({
     country1: e
   })
   console.log(this.state.country1)
 }
 
-
   get lineChartConfig() {
-    
+   
     return {
       background: black,
       // width: 1200,
@@ -215,7 +310,7 @@ changeState = (e) => {
         bottom: 80,
         left: 90,
       },
-     
+      
       lineWidth:8,
       pointSize:19,
       yScale: {
@@ -232,7 +327,7 @@ changeState = (e) => {
         orient: 'bottom',
         tickSize: 5,
         tickPadding: 0,
-      //   tickRotation: 0,
+    
         legend: 'Time period',
         legendOffset: 60,
         legendPosition: 'center'
@@ -251,7 +346,8 @@ changeState = (e) => {
       pointColor:{ theme: 'background' },
       enableArea:true,
       useMesh:true,
-     
+    
+    
     tooltip: {
       container: {
           background: 'white',
@@ -306,7 +402,6 @@ changeState = (e) => {
     };
   }
 
-
   render() {
     const content = (
       <div>
@@ -315,7 +410,6 @@ changeState = (e) => {
   )
 
   const countriesCount = this.state.selected.length
-    // console.log(this.state.countries.length);
 
     const { selected, isLoading } = this.state;
     return (
@@ -323,13 +417,11 @@ changeState = (e) => {
       <>
 
       <div class="navButtons">
-    
-      <a  target="_blank" href='https://www.coronacases.netlify.com'> <button class="casesButton"> Confirmed Cases </button> </a> 
-    <a target="_blank" href='https://www.coronadeaths.netlify.com'> <button class="deathsButton"> Deaths</button> </a>
-     
+      <a  target="_blank" href='https://covid-19cases.netlify.com'> <button class="casesButton"> Confirmed Cases </button> </a> 
+        <a target="_blank" href='https://covid-19deaths.netlify.com'> <button class="deathsButton"> Deaths</button> </a>
       </div>
 
-      
+     
        
       <div style={{'width':'900', textAlign: "center", "marginLeft":'300', 'marginBlock': '0', 'margin': '0 auto'}}>
       <h1 className="title">COVID-19 <span style={{'color': 'green'}}> RECOVERED </span> CASES ACROSS THE GLOBE</h1>
@@ -351,14 +443,14 @@ changeState = (e) => {
           overrideStrings={{
             selectSomeItems: "Select Exactly 4 countries ",
             allItemsAreSelected: "Please select exactly 4 countries",
-            // selectAll: "do u wanna select all of them?",
+            
             search: "Add 4 countries"
           }}
         />
         <button class="resetButton" onClick={this.resetCountries}> Reset </button>
         {countriesCount === 4 ? <button  class="updateButton" onClick={this.updateCountries}>Update</button> : null}
         <h4 style={{'color':'white'}}>{selected.join(", ")}</h4>
-       
+        
         </div>
 
         
@@ -368,13 +460,13 @@ changeState = (e) => {
           {...this.lineChartConfig}
         />
 
-     
+        
       </div>
-     
+      
       
       </>
     );
   }
 }
 
-render(<App/>, document.getElementById('root'));
+render(<App />, document.getElementById('root'));
