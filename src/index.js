@@ -11,7 +11,7 @@ import { ThemeProvider } from '@nivo/core';
 import { black } from 'color-name';
 import saveImage from "./dom2Image";
 import Multiselect from "@khanacademy/react-multi-select"; 
-import Deaths from './Deaths';
+import Deaths from './death';
 
 
 export default class App extends Component {
@@ -240,7 +240,7 @@ changeState = (e) => {
         tickSize: 5,
         tickPadding: 0,
         tickRotation: 0,
-        legend: 'Confirmed Cases',
+        legend: ' Confirmed Deaths',
         legendOffset: -54,
         legendPosition: 'center'
       },
