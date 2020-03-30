@@ -10,8 +10,6 @@ import uuid from 'react-uuid';
 import { ThemeProvider } from '@nivo/core';
 import { black } from 'color-name';
 import saveImage from "./dom2Image";
-import {Link} from 'react-router-dom';
-import {BrowserRouter} from 'react-router-dom';
 import Multiselect from "@khanacademy/react-multi-select"; 
 
 export default class App extends Component {
@@ -330,11 +328,10 @@ changeState = (e) => {
       <>
 
       <div class="navButtons">
-      <BrowserRouter>
+      
       <a  target="_blank" href='https://coronacases.netlify.com'> <button class="casesButton"> Confirmed Cases </button> </a> 
-        {/* <a target="_blank" href='https://wwww.coronadeaths.netlify.com'> <button class="deathsButton"> Deaths</button> </a> */}
         <a target="_blank" href='https://coronarecovered.netlify.com'>  <button class="recoveredButton"> Recovered </button> </a>
-      </BrowserRouter>
+      
       </div>
 
      

@@ -11,6 +11,7 @@ import { ThemeProvider } from '@nivo/core';
 import { black } from 'color-name';
 import saveImage from "./dom2Image";
 import Multiselect from "@khanacademy/react-multi-select"; 
+import Deaths from './Deaths';
 
 
 export default class App extends Component {
@@ -43,33 +44,28 @@ setTimeout(() => {
     });
   }, 5000);
 fetch('https://pomber.github.io/covid19/timeseries.json')
-//   method: 'GET'
-// })
+
 .then(r=>r.json())
 .then(data=>{
           this.setState( (state) => {
             return {
-                    // country: [...this.state.country, country],
+                    
                     data: data
                   }
           },
           
           )
-        
-
-    
+   
 })
 this.fetchAgain();
 
-
 }
-
 
 
 makeArrayOfCountries = () => {
   const countriesArray = Object.keys(this.state.data)
   console.log(countriesArray)
-  //!  how do i iterate over this array to have output like {label: country, value: country}
+  
   var outcome = countriesArray.sort().map(function(value){
     return {label: value, value: value};
   })
@@ -85,7 +81,7 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
 .then(response => response.json())
 .then(data => {
   data[this.state.countries[3]].forEach(({ date, confirmed, recovered, deaths }) =>
-    // console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
+    
     this.setState({
       data1: [...this.state.data1, 
         {
@@ -100,12 +96,12 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
     })
   )
 })
-
+//! 2 
 fetch("https://pomber.github.io/covid19/timeseries.json")
 .then(response => response.json())
 .then(data => {
   data[this.state.countries[2]].forEach(({ date, confirmed, recovered, deaths }) =>
-    // console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
+    
     this.setState({
       data1: [...this.state.data1, 
         {
@@ -125,7 +121,7 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
 .then(response => response.json())
 .then(data => {
   data[this.state.countries[1]].forEach(({ date, confirmed, recovered, deaths }) =>
-    // console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
+   
     this.setState({
       data1: [...this.state.data1, 
         {
@@ -178,7 +174,6 @@ options = [
 ];
 
 
-
 handleSelectedChanged = selected => {
   this.setState({ selected: selected });
   console.log(this.state.selected);
@@ -191,11 +186,10 @@ resetCountries = () => {
 updateCountries = () => {
   this.setState({countries: this.state.selected});
   this.fetchAgain();
-  
+
 }
 
 changeState = (e) => {
-  // this.stateChange(e)
   this.setState({
     country1: e
   })
@@ -204,7 +198,7 @@ changeState = (e) => {
 
 
   get lineChartConfig() {
-    
+   
     return {
       background: black,
       // width: 1200,
@@ -215,11 +209,11 @@ changeState = (e) => {
       curve:"monotoneY",
       margin: {
         top: 50,
-        right: 80,
+        right: 120,
         bottom: 80,
         left: 90,
       },
-      
+      // colors:{scheme: 'paired'},
       lineWidth:8,
       pointSize:19,
       yScale: {
@@ -256,8 +250,6 @@ changeState = (e) => {
       enableArea:true,
       useMesh:true,
       
-    
-   
     tooltip: {
       container: {
           background: 'white',
@@ -282,37 +274,37 @@ changeState = (e) => {
 
   get lineChartConfigFromExample() {
     return {
-      width: 900,
-      height: 400,
-      margin: {
+      width: 900,
+      height: 400,
+      margin: {
         top: 20,
         right: 20,
         bottom: 60,
         left: 80
       },
-      data: this.state.data1,
-      animate: true,
-      xScale:{
+      data: this.state.data1,
+      animate: true,
+      xScale:{
         type: 'time',
         format: '%Y-%m-%d',
         precision: 'day'
         },
-      yScale: {
+      yScale: {
         type: 'linear',
         stacked: false
       },
-      axisBottom: {
+      axisBottom: {
         format: '%b %d'
       },
-      curve: 'step',
-      enableDotLabel: true,
-      dotSize: 16,
-      dotBorderWidth: 1,
-      dotBorderColor: 'inherit:darker(0.3)'
+      curve: 'step',
+      enableDotLabel: true,
+      dotSize: 16,
+      dotBorderWidth: 1,
+      dotBorderColor: 'inherit:darker(0.3)'
     };
   }
 
-  
+
 
   render() {
     const content = (
@@ -322,59 +314,27 @@ changeState = (e) => {
   )
 
   const countriesCount = this.state.selected.length
-    
+ 
 
     const { selected, isLoading } = this.state;
     return (
 
       <>
 
- <div class="navButtons">
- <a target="_blank" href='https://coronadeaths.netlify.com'> <button class="deathsButton"> Deaths</button> </a>
-<a target="_blank" href='https://coronarecovered.netlify.com'>  <button class="recoveredButton"> Recovered </button> </a>
-</div>    
-      
-      <div style={{'width':'800', textAlign: "center", "marginLeft":'300', 'margin': '0 auto'}}>
-      <h1 className="title">COVID-19 <span style={{"color":"yellow"}}>CASES</span> ACROSS THE GLOBE</h1>
+      <div class="navButtons">
+    
+        <a  target="_blank" href='https://coronacases.netlify.com'> <button class="casesButton"> Confirmed Cases </button> </a> 
+        
+        <a target="_blank" href='https://coronarecovered.netlify.com'>  <button class="recoveredButton"> Recovered </button> </a>
+   
+      </div>
 
      
-      <div class="covid"> 
-      <div class="surgeon"> 😷</div>
-      <div class="shot"> 💉</div>
-      <div class="world"> 🌎</div>
-      </div>
-     
-      
-        <Multiselect
-        style={{"display":"flex", "justify-content":"center", "align-items":"center"}}
-          options={this.makeArrayOfCountries()}
-          onSelectedChanged={this.handleSelectedChanged}
-          selected={this.state.selected}
-          isLoading={isLoading}
-          disabled={isLoading}
-          disableSearch={false}
-          overrideStrings={{
-            selectSomeItems: "Select Exactly 4 Countries ",
-            allItemsAreSelected: "Please select exactly 4 countries",
-            search: "Add 4 countries"
-          }}
-        />
-        <button class="resetButton" onClick={this.resetCountries}> Reset </button>
-        {countriesCount === 4 ? <button  class="updateButton" onClick={this.updateCountries}>Update</button> : null}
-        <h3 style={{'color':'white'}}>{selected.join(", ")}</h3>
-        
+        <Deaths/>
+        <div style={{"textAlign":"center", "marginBottom":"40px"}}>
+        <a  style={{'color':'#56A0D0','font-size':'18px'}} target="_blank" href="https://bellep.info"> Get in Touch? </a>
         </div>
-
         
-
-        <div id="dom2Image"style={{'width':'100vw', 'margin': '75', 'backgroundColor':'white'}}>
-        <ResponsiveLine key={null}
-          {...this.lineChartConfig}
-        />
-
-       
-      </div>
-     
       </>
     );
   }
