@@ -330,8 +330,8 @@ changeState = (e) => {
       <>
 
  <div class="navButtons">
- <a target="_blank" href='https://coronadeaths.netlify.com'> <button class="deathsButton"> Deaths</button> </a>
-<a target="_blank" href='https://coronarecovered.netlify.com'>  <button class="recoveredButton"> Recovered </button> </a>
+ <a target="_blank" href='https://covid-19deaths.netlify.com'> <button class="deathsButton"> Deaths</button> </a>
+<a target="_blank" href='https://covid-19recovered.netlify.com'>  <button class="recoveredButton"> Recovered </button> </a>
 </div>    
       
       <div style={{'width':'800', textAlign: "center", "marginLeft":'300', 'margin': '0 auto'}}>
