@@ -372,10 +372,10 @@ changeState = (e) => {
           {...this.lineChartConfig}
         />     
       </div>
-
-      <a  style={{'color':'#56A0D0','font-size':'18px'}} target="_blank" href="https://bellep.info"> Get in Touch? </a>
      
       </>
+
+<a  style={{'color':'#56A0D0','font-size':'18px'}} target="_blank" href="https://bellep.info"> Get in Touch? </a>
     );
   }
 }
