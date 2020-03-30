@@ -370,12 +370,10 @@ changeState = (e) => {
         <div id="dom2Image"style={{'width':'100vw', 'margin': '75', 'backgroundColor':'white'}}>
         <ResponsiveLine key={null}
           {...this.lineChartConfig}
-        />
-
-<a  style={{'color':'#56A0D0','font-size':'18px'}} target="_blank" href="https://bellep.info"> Get in Touch? </a>
-
-       
+        />     
       </div>
+
+      <a  style={{'color':'#56A0D0','font-size':'18px'}} target="_blank" href="https://bellep.info"> Get in Touch? </a>
      
       </>
     );
