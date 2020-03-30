@@ -372,11 +372,13 @@ changeState = (e) => {
           {...this.lineChartConfig}
         />     
       </div>
-     
-      </>
+      <div style={{"textAlign":"center", "marginBottom":"40px"}}>
+      <a  style={{'color':'#56A0D0','font-size':'18px'}} target="_blank" href="https://bellep.info"> Get in Touch? </a>
+        </div>  
 
-<a  style={{'color':'#56A0D0','font-size':'18px'}} target="_blank" href="https://bellep.info"> Get in Touch? </a>
+      </>
     );
+
   }
 }
 
