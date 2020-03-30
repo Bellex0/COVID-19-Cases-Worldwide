@@ -321,13 +321,7 @@ changeState = (e) => {
 
       <>
 
-      <div class="navButtons">
-    
-        <a  target="_blank" href='https://coronacases.netlify.com'> <button class="casesButton"> Confirmed Cases </button> </a> 
-        
-        <a target="_blank" href='https://coronarecovered.netlify.com'>  <button class="recoveredButton"> Recovered </button> </a>
-   
-      </div>
+      
 
      
         <Deaths/>
