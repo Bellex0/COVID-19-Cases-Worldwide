@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import Hello from './Hello';
 import { Line } from '@nivo/line';
 import './style.css';
 import Dropdown from './Dropdown';

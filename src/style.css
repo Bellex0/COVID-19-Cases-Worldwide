@@ -103,6 +103,7 @@ text[alignment-baseline="before-edge"]{
   padding: 5px;	
   font-size: 20px;	
   background:#d2d1ce;	
+  border-radius: 10px
   	
 }	
 .resetButton:hover{	
@@ -117,7 +118,8 @@ text[alignment-baseline="before-edge"]{
   font-family: "Special Elite";	
   padding: 5px;	
   font-size: 20px;	
-  background:#d2d1ce	
+  background:#d2d1ce;
+  border-radius: 10px	
 }	
 .updateButton:hover{	
   background-color: greenyellow;	
@@ -200,4 +202,76 @@ input[placeholder="Search Countries"]{
     top: 5px;
     left: 70px;
   }
+}
+
+.recoveredButton {
+  background-color: #4CAF50;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-family: "Special Elite"
+}
+
+.recoveredButton:hover {
+  animation-name: pulse;	
+  animation-duration: 2s;	
+  animation-iteration-count: infinite;	
+}
+
+.deathsButton {
+  background-color: rgb(175, 76, 76);
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-family: "Special Elite"
+}
+
+.deathsButton:hover {
+  animation-name: pulse;	
+  animation-duration: 2s;	
+  animation-iteration-count: infinite;	
+}
+
+.casesButton {
+  background-color: rgb(247, 212, 17);
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-family: "Special Elite"
+}
+
+.casesButton:hover {
+  animation-name: pulse;
+  animation-duration: 2s;	
+  animation-iteration-count: infinite;	
+}
+
+.navButtons {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  align-items: center;
 }
