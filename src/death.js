@@ -329,8 +329,8 @@ changeState = (e) => {
 
       <div class="navButtons">
       
-      <a  target="_blank" href='https://covid-19cases.netlify.com'> <button class="casesButton"> Confirmed Cases </button> </a> 
-        <a target="_blank" href='https://covid-19recovered.netlify.com'>  <button class="recoveredButton"> Recovered </button> </a>
+      <a href='https://covid-19cases.netlify.com'> <button class="casesButton"> Confirmed Cases </button> </a> 
+        <a href='https://covid-19recovered.netlify.com'>  <button class="recoveredButton"> Recovered </button> </a>
       
       </div>
 
@@ -356,7 +356,6 @@ changeState = (e) => {
           overrideStrings={{
             selectSomeItems: "Select Exactly 4 countries ",
             allItemsAreSelected: "Please select exactly 4 countries",
-            // selectAll: "do u wanna select all of them?",
             search: "Add 4 countries"
           }}
         />

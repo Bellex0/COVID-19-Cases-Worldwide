@@ -34,31 +34,11 @@ h1, p {
   color: #4e4e4e !important;
 }
 
-/* .dropdown-heading .dropdown-heading-value:hover{
-  color: #4e4e4e !important;
-}
 
-.dropdown-heading .dropdown-heading-value span {
-  color: white !important;
-}
-.dropdown-heading .dropdown-heading-value span:hover{
-  color: #4e4e4e !important;
-} */
 
 .select-item .item-renderer span {
   font-family: "helvetica" !important;
 }
-
-/* .dropdown-heading-dropdown-arrow span {
-  border: none !important;
-  background: url("M790.592 551.616l-45.184 45.12-233.408-233.344-233.408 233.344-45.184-45.12 278.592-278.592 278.592 278.592z") !important;
-} */
-
-/* g > g > text {	
-  font-size: 14px !important	
-} */	
-
-
 
 /* Confirmed cases */
 text[transform="translate(-54, 533.88671875) rotate(-90)"]{	
@@ -68,12 +48,6 @@ text[transform="translate(-54, 533.88671875) rotate(-90)"]{
  	
 }	
 
-/* Time period */
-/* text[transform="translate(690, 60) rotate(0)"]{	
-  font-size: 30px !important;	
-  font-weight: bold;	
-  font-family: "Special Elite"	
-}	 */
 
 text[style="fill: rgb(51, 51, 51); font-size: 11px;"]{
   font-size: 30px !important;	
@@ -81,7 +55,6 @@ text[style="fill: rgb(51, 51, 51); font-size: 11px;"]{
   font-family: "Special Elite"	
 }
 
-/* <text transform="translate(690, 60) rotate(0)" text-anchor="middle" style="fill: rgb(51, 51, 51); font-size: 11px;">Time period</text> */
 text[text-anchor="end"]{	
   font-size: 16px !important	
 }	
@@ -132,12 +105,7 @@ h3 {
   font-size: 24px;	
   text-align: center;	
 }	
-/* [transform=translate(550, 46)]{	
-  font-size: 20px !important	
-} */	 */
-/* [text-anchor~=middle]{	
-  font-size: 16px !important	
-} */	 */
+
 
 input[placeholder="Search Countries"]{	
   font-size: 14px !important	
@@ -166,7 +134,7 @@ input[placeholder="Search Countries"]{
 .shot{
   font-size: 60px;
   position:absolute;
-  margin-left: 90px;
+  margin-left: 80px;
   animation-name: shoot;
    animation-duration: 3s;
   animation-iteration-count: infinite;
@@ -176,7 +144,7 @@ input[placeholder="Search Countries"]{
 
 .world{
   font-size: 60px;
-  margin-left: 70px;
+  margin-left: 60px;
   animation-name: spin;
   animation-duration: 3s;
   animation-iteration-count:infinite;

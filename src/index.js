@@ -87,7 +87,6 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
         {
           key: uuid(),
           id: this.state.countries[3],
-          // color: "hsl(348, 70%, 50%)",
           data: [
             {key: uuid(),  x: new Date(`${date}`), y: confirmed, value: "a" },
           ]
@@ -141,7 +140,6 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
 .then(response => response.json())
 .then(data => {
   data[this.state.countries[0]].forEach(({ date, confirmed, recovered, deaths }) =>
-    // console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
     this.setState({
       data1: [...this.state.data1, 
         {
@@ -201,8 +199,6 @@ changeState = (e) => {
    
     return {
       background: black,
-      // width: 1200,
-      // height: 900,
       data: this.state.data1,
       xScale:{type: 'point' },
       yScale:{ type: 'linear', min: '57', max: 'auto', stacked: true, reverse: false },
@@ -213,7 +209,6 @@ changeState = (e) => {
         bottom: 80,
         left: 90,
       },
-      // colors:{scheme: 'paired'},
       lineWidth:8,
       pointSize:19,
       yScale: {
@@ -230,7 +225,6 @@ changeState = (e) => {
         orient: 'bottom',
         tickSize: 5,
         tickPadding: 0,
-      //   tickRotation: 0,
         legend: 'Time period',
         legendOffset: 60,
         legendPosition: 'center'
@@ -320,10 +314,6 @@ changeState = (e) => {
     return (
 
       <>
-
-      
-
-     
         <Deaths/>
         <div style={{"textAlign":"center", "marginBottom":"40px"}}>
         <a  style={{'color':'#56A0D0','font-size':'18px'}} target="_blank" href="https://bellep.info"> Get in Touch? </a>

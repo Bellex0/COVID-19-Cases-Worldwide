@@ -35,21 +35,12 @@ export default class Trail extends Component {
     .then(data=>{
               this.setState( (state) => {
                 return {
-                        // country: [...this.state.country, country],
                         data: data,
                         countries: [...this.state.countries, Object.keys(data)]
                       }
               },
-              // ()=>{
-              //   this.setState({
-              //     country: [...this.state.country, Object.keys(data)]
-              //   })
-              // }
               )
     })
-    
-    // this.addDataToArray()
-    // this.updateFinalData()
   }
 
 makeAnArray = () => {
@@ -98,8 +89,6 @@ updateFinalData () {
   render() {
     console.log(this.state.finalData);
     this.updateFinalData();
-      // console.log(this.addDataToArray("US"))
-      // console.log(this.state.finalData)
         const data = [
             {
               "id": "japan",
@@ -464,7 +453,6 @@ updateFinalData () {
                     legendOffset: -40,
                     legendPosition: 'middle'
                 }}
-                // colors={{ scheme: 'set1' }}
                 pointSize={20}
                 pointColor={{ theme: 'labels.text.fill' }}
                 pointBorderWidth={2}
