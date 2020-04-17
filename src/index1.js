@@ -25,17 +25,10 @@ export default class App extends Component {
 
 componentDidMount(){
 fetch('https://pomber.github.io/covid19/timeseries.json')
-//   method: 'GET'
-// })
 .then(r=>r.json())
 .then(data=>{
-  // console.log(Object.keys(data))
-      // Object.keys(data).forEach(function(country){
-      //     console.log(country)
-      //     console.log(data[country])
           this.setState( (state) => {
             return {
-                    // country: [...this.state.country, country],
                     data: data
                   }
           },
@@ -45,40 +38,8 @@ fetch('https://pomber.github.io/covid19/timeseries.json')
             })
           }
           )
-        
-
-    //       data.forEach(({ date, confirmed, recovered, deaths }) =>
-    //   console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
-    // )
-// })
 })
 }
-
-// ! how the state should look like 
-// [
-//   { x: new Date(`09-10-2018`), y: 3 },
-// ]
-
-// !this works 
-// Object.keys(data).forEach(function(item){
-//   console.log(item)
-//   console.log(data[item])
-// })
-
-// !code how it should work 
-// fetch("https://pomber.github.io/covid19/timeseries.json")
-//   .then(response => response.json())
-//   .then(data => {
-//     data["Argentina"].forEach(({ date, confirmed, recovered, deaths }) =>
-//       console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
-//     )
-//   })
-
-//! id =${countries}
-// ? x = 
-
-  
-
 
   get lineChartConfig() {
     console.log(Object.keys(this.state.data))
@@ -175,57 +136,15 @@ fetch('https://pomber.github.io/covid19/timeseries.json')
     };
   }
 
-  // handleChange = () => {
-  //   fetch("https://pomber.github.io/covid19/timeseries.json")
-  // .then(response => response.json())
-  // .then(data => {
-  //   data["Argentina"].forEach(({ date, confirmed, recovered, deaths }) =>
-  //     // console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
-  //     this.setState({
-  //       data1: [
-  //         {
-  //           id: `Line`,
-  //           data: [
-  //             { x: new Date(`09-10-2018`), y: 3 },
-  //             { x: new Date(`09-11-2018`), y: 5 },
-  //             { x: new Date(`09-12-2018`), y: 1 },
-  //             { x: new Date(`09-13-2018`), y: 6 },
-  //           ]
-  //         },
-  //         {
-  //           id: `Line2`,
-  //           data: [
-  //             { x: new Date(`09-10-2018`), y: 5 },
-  //             { x: new Date(`09-11-2018`), y: 3 },
-  //             { x: new Date(`09-12-2018`), y: 4 },
-  //             { x: new Date(`09-13-2018`), y: 3 },
-  //           ]
-  //         }
-  //       ]
-  //     })
-  //   )
-  // })
-  // }
-
   render() {
 
     
     return (
       <div>
-        {/* <Dropdown data={Object.keys(this.state.data)}/>  */}
         <h3>Custom Data Index1 </h3>
         <Line key={1}
           {...this.lineChartConfig}
         />
-
-        {/* <h3>Data from the <a
-          href="http://nivo.rocks/storybook/?knob-curve=step&selectedKind=Line&selectedStory=time%20x%20scale&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybooks%2Fstorybook-addon-knobs"
-          title="@nivo/line"
-        >example</a></h3> */}
-        {/* <Line key={2}
-        {...this.lineChartConfigFromExample}
-        /> */}
-        {/* <Trial/> */}
       </div>
     );
   }

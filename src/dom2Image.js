@@ -1,8 +1,6 @@
 import html2canvas from "html2canvas";
 
 var options = {
-  // logging: true,
-  // profile: true,
   useCORS: true
 };
 

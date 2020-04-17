@@ -7,8 +7,6 @@ export default class Dropdown extends Component {
         super();
         this.state = {
           name: 'React',
-        //   data: this.props.data,
-        //   country:this.props.data,
           country1: "US",
           country2: "",
           country3: "",
@@ -32,7 +30,6 @@ export default class Dropdown extends Component {
                         style={{"margin-bottom":"15px", "height":"30px","font-size":"17px",
                                 "background-color":"#ffff00"
                         }}
-                        // options={options}
                         values={[]}
                         onChange={this.changeSelect}
             >
@@ -46,11 +43,7 @@ export default class Dropdown extends Component {
                       {country}
                 </option>
         ))}
-        </select>
-            {/* <Trail/> */}
-
-        {/* <Index1 data={this.state}/> */}
-                
+        </select>         
             </div>
         )
     }

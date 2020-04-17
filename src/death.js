@@ -42,8 +42,6 @@ setTimeout(() => {
     });
   }, 5000);
 fetch('https://pomber.github.io/covid19/timeseries.json')
-//   method: 'GET'
-// })
 .then(r=>r.json())
 .then(data=>{
           this.setState( (state) => {
@@ -58,10 +56,7 @@ fetch('https://pomber.github.io/covid19/timeseries.json')
 })
 this.fetchAgain();
 
-
-
 }
-
 
 makeArrayOfCountries = () => {
   const countriesArray = Object.keys(this.state.data)
@@ -97,7 +92,7 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
     })
   )
 })
-//! 2 
+
 fetch("https://pomber.github.io/covid19/timeseries.json")
 .then(response => response.json())
 .then(data => {
@@ -137,7 +132,7 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
     })
   )
 })
-//! 4 
+
 fetch("https://pomber.github.io/covid19/timeseries.json")
 .then(response => response.json())
 .then(data => {
@@ -174,8 +169,6 @@ options = [
   { label: "Label5", value: "label_5" }
 ];
 
-
-
 handleSelectedChanged = selected => {
   this.setState({ selected: selected });
   console.log(this.state.selected);
@@ -192,20 +185,16 @@ updateCountries = () => {
 }
 
 changeState = (e) => {
-  
   this.setState({
     country1: e
   })
   console.log(this.state.country1)
 }
 
-
   get lineChartConfig() {
     
     return {
       background: black,
-      // width: 1200,
-      // height: 900,
       data: this.state.data1,
       xScale:{type: 'point' },
       yScale:{ type: 'linear', min: '57', max: 'auto', stacked: true, reverse: false },
@@ -233,7 +222,6 @@ changeState = (e) => {
         orient: 'bottom',
         tickSize: 5,
         tickPadding: 0,
-      //   tickRotation: 0,
         legend: 'Time period',
         legendOffset: 60,
         legendPosition: 'center'
@@ -253,8 +241,6 @@ changeState = (e) => {
       enableArea:true,
       useMesh:true,
      
-
- 
     tooltip: {
       container: {
           background: 'white',
@@ -309,9 +295,6 @@ changeState = (e) => {
     };
   }
 
-  
- 
-
   render() {
     const content = (
       <div>
@@ -321,15 +304,14 @@ changeState = (e) => {
 
   const countriesCount = this.state.selected.length
     
-
     const { selected, isLoading } = this.state;
     return (
 
       <>
 
       <div class="navButtons">
-      <a  target="_blank" href='https://covid-19cases.netlify.com'> <button class="casesButton"> Confirmed Cases </button> </a> 
-        <a target="_blank" href='https://coronarecovered.netlify.com'>  <button class="recoveredButton"> Recovered </button> </a>
+      <a   href='https://covid-19cases.netlify.com'> <button class="casesButton"> Confirmed Cases </button> </a> 
+        <a  href='https://coronarecovered.netlify.com'>  <button class="recoveredButton"> Recovered </button> </a>
       </div>
 
      
@@ -354,7 +336,6 @@ changeState = (e) => {
           overrideStrings={{
             selectSomeItems: "Select Exactly 4 countries ",
             allItemsAreSelected: "Please select exactly 4 countries",
-            // selectAll: "do u wanna select all of them?",
             search: "Add 4 countries"
           }}
         />
@@ -363,8 +344,6 @@ changeState = (e) => {
         <h4 style={{'color':'white'}}>{selected.join(", ")}</h4>
        
         </div>
-
-        
 
         <div id="dom2Image"style={{'width':'100vw','margin': '60','marginRight':'60', 'marginTop': '0', 'backgroundColor':'white'}}>
         <ResponsiveLine key={null}

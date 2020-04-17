@@ -49,127 +49,21 @@ fetch('https://pomber.github.io/covid19/timeseries.json')
 .then(data=>{
           this.setState( (state) => {
             return {
-                    // country: [...this.state.country, country],
                     data: data
                   }
           },
-          // ()=>{
-          //   this.setState({
-          //     country: [...this.state.country, Object.keys(data)]
-          //   })
-          // }
           )
-        
-
-    //       data.forEach(({ date, confirmed, recovered, deaths }) =>
-    //   console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
-    // )
-// })
 })
 this.fetchAgain();
-//moment(date).format('MM-DD-YYYY')
-//! 1 
-
-
-// fetch("https://pomber.github.io/covid19/timeseries.json")
-// .then(response => response.json())
-// .then(data => {
-//   data[this.state.countries[3]].forEach(({ date, confirmed, recovered, deaths }) =>
-//     // console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
-//     this.setState({
-//       data1: [...this.state.data1, 
-//         {
-//           key: uuid(),
-//           id: this.state.countries[3],
-//           // color: "hsl(348, 70%, 50%)",
-//           data: [
-//             {key: uuid(),  x: new Date(`${date}`), y: confirmed, value: "a" },
-//           ]
-//         }
-//       ]
-//     })
-//   )
-// })
-// //! 2 
-// fetch("https://pomber.github.io/covid19/timeseries.json")
-// .then(response => response.json())
-// .then(data => {
-//   data[this.state.countries[2]].forEach(({ date, confirmed, recovered, deaths }) =>
-//     // console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
-//     this.setState({
-//       data1: [...this.state.data1, 
-//         {
-//           key: uuid(),
-//           id: this.state.countries[2],
-//           color: "hsla(117, 100%, 50%, 1)",
-//           data: [
-//             { key: uuid(),  x: new Date(`${date}`), y: confirmed, value: "a" },
-//           ]
-//         }
-//       ]
-//     })
-//   )
-// })
-// //! 3 
-// fetch("https://pomber.github.io/covid19/timeseries.json")
-// .then(response => response.json())
-// .then(data => {
-//   data[this.state.countries[1]].forEach(({ date, confirmed, recovered, deaths }) =>
-//     // console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
-//     this.setState({
-//       data1: [...this.state.data1, 
-//         {
-//           key: uuid(),
-//           id: this.state.countries[1],
-//           color: "hsla(311, 100%, 50%, 1)",
-//           data: [
-//             { key: uuid(), x: new Date(`${date}`), y: confirmed, value: "a" },
-//           ]
-//         }
-//       ]
-//     })
-//   )
-// })
-// //! 4 
-// fetch("https://pomber.github.io/covid19/timeseries.json")
-// .then(response => response.json())
-// .then(data => {
-//   data[this.state.countries[0]].forEach(({ date, confirmed, recovered, deaths }) =>
-//     // console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
-//     this.setState({
-//       data1: [...this.state.data1, 
-//         {
-//           key: uuid(),
-//           id: this.state.countries[0],
-//           color: "hsl(348, 70%, 50%)",
-//           data: [
-//             { key: uuid(), x: new Date(`${date}`), y: confirmed , value: "a"},
-//           ]
-//         }
-//       ]
-//     })
-//   )
-// })
 }
-
-// options= [
-//   Object.keys(this.state.data).map((country)=>{
-//      return  {label: country,
-//               value: country}
-//   })
-// ]
 
 makeArrayOfCountries = () => {
   const countriesArray = Object.keys(this.state.data)
   console.log(countriesArray)
-  //!  how do i iterate over this array to have output like {label: country, value: country}
   var outcome = countriesArray.sort().map(function(value){
     return {label: value, value: value};
   })
   return outcome
-    // countriesArray.forEach((country)=>{
-    //    return  country;
-    // })
 }
 
 fetchAgain = () => {
@@ -180,13 +74,11 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
 .then(response => response.json())
 .then(data => {
   data[this.state.countries[3]].forEach(({ date, confirmed, recovered, deaths }) =>
-    // console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
     this.setState({
       data1: [...this.state.data1, 
         {
           key: uuid(),
           id: this.state.countries[3],
-          // color: "hsl(348, 70%, 50%)",
           data: [
             {key: uuid(),  x: new Date(`${date}`), y: recovered, value: "a" },
           ]
@@ -195,12 +87,11 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
     })
   )
 })
-//! 2 
+
 fetch("https://pomber.github.io/covid19/timeseries.json")
 .then(response => response.json())
 .then(data => {
   data[this.state.countries[2]].forEach(({ date, confirmed, recovered, deaths }) =>
-    // console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
     this.setState({
       data1: [...this.state.data1, 
         {
@@ -215,12 +106,11 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
     })
   )
 })
-//! 3 
+
 fetch("https://pomber.github.io/covid19/timeseries.json")
 .then(response => response.json())
 .then(data => {
   data[this.state.countries[1]].forEach(({ date, confirmed, recovered, deaths }) =>
-    // console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
     this.setState({
       data1: [...this.state.data1, 
         {
@@ -240,7 +130,6 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
 .then(response => response.json())
 .then(data => {
   data[this.state.countries[0]].forEach(({ date, confirmed, recovered, deaths }) =>
-    // console.log(`${date} active cases: ${confirmed - recovered - deaths}`)
     this.setState({
       data1: [...this.state.data1, 
         {
@@ -266,7 +155,7 @@ options = [
   { label: "Sleeping Cell", value: "sleeping_cell" },
   { label: "Anomaly", value: "anomaly" },
   { label: "Label1", value: "label_1" },
-  { label: "Label2fgfgfgfghfghgh", value: "label_2" },
+  { label: "Label2", value: "label_2" },
   { label: "Label3", value: "label_3" },
   { label: "Label4", value: "label_4" },
   { label: "Label5", value: "label_5" }
@@ -298,8 +187,6 @@ changeState = (e) => {
    
     return {
       background: black,
-      // width: 1200,
-      // height: 900,
       data: this.state.data1,
       xScale:{type: 'point' },
       yScale:{ type: 'linear', min: '57', max: 'auto', stacked: true, reverse: false },
@@ -417,8 +304,8 @@ changeState = (e) => {
       <>
 
       <div class="navButtons">
-      <a  target="_blank" href='https://covid-19cases.netlify.com'> <button class="casesButton"> Confirmed Cases </button> </a> 
-        <a target="_blank" href='https://covid-19deaths.netlify.com'> <button class="deathsButton"> Deaths</button> </a>
+      <a  href='https://covid-19cases.netlify.com'> <button class="casesButton"> Confirmed Cases </button> </a> 
+        <a href='https://covid-19deaths.netlify.com'> <button class="deathsButton"> Deaths</button> </a>
       </div>
 
      
