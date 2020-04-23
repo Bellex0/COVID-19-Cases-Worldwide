@@ -9,7 +9,7 @@ An educational app that serves to inform the public about the number of confirme
 - API from Johns Hopkins Univeristy for COVID-19 statistics
 
 ### Installation
-1.  Fork (optional) and clone or download this repository to local system
+1.  Clone or download this repository to local system
 2. Use preferred text editor and/or terminal to navigate into `COVID-19-Cases-Worldwide` directory
 3. Run `npm install` (or `npm i`) in terminal
 4. Run `npm start` in terminal to launch the app in browser
