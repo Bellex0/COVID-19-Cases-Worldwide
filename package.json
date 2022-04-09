@@ -8,7 +8,7 @@
     "animate.css": "^3.7.2",
     "glamorous": "^5.0.0",
     "html2canvas": "^1.0.0-rc.5",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "multiselect-react-dropdown": "^1.4.7",
     "prop-types": "15.6.2",
     "react": "16.5.0",
